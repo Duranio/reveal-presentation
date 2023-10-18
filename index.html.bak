@@ -34,7 +34,7 @@
 								## Panoramica
 							</textarea>
 						</section>
-					<section>Come suggerisce il nome, il Data Migration Tool è uno strumento ideato per facilitare l'importazione di dati da altri gestionali verso Odoo</section>
+					<section>Come suggerisce il nome, <strong>il Data Migration Tool</strong> è uno strumento ideato per facilitare l'importazione di dati da altri gestionali verso Odoo</section>
 					<section>L'applicazione è composta funzionalmente da 4 strumenti che rappresentano anche i 4 passaggi sequenziali che devono essere eseguiti per portare a termine la migrazione di dati</section>
 					<section>
 						I 4 strumenti, disposti da sinistra a destra sul menù principale sono: il Connettore, l'oggetto Source Table Schema, il Mapper ed infine il Relational Helper
@@ -49,7 +49,7 @@
 						</textarea>
 					</section>
 					<section>
-						La crezione di un Connettore, rappresenta il punto di partenza del processo di migrazione.
+						La crezione di un <strong>Connettore</strong>, rappresenta il punto di partenza del processo di migrazione.
 					</section>
 					<section>
 						Un nuovo record di connessione viene creato grazie alla form dell'oggetto db.connector, che consente di impostare il nome del connettore, il tipo di DB a cui ci si connette (attualmente l'unica tipologia implementata selezionabile è MySQL), l'URL, il nome del DB e la password.
@@ -64,7 +64,7 @@
 						<img src="img/show_all_tables.png" width="600"/>
 					</section>
 					<section>
-						Utilizzando questo wizard è possibile selezionare una o più tabelle sorgente per la creazione di record del secondo elemento fondamentale dell'applicazione ovvero del Source Table Schema
+						Utilizzando questo wizard è possibile selezionare una o più tabelle sorgente per la creazione di record del secondo elemento fondamentale dell'applicazione ovvero del <strong>Source Table Schema</strong>.
 						<img src="img/import_schemas.png" width="600"/>
 					</section>
 				</section>
@@ -76,7 +76,7 @@
 						</textarea>
 					</section>
 					<section>
-						I record dell'oggetto Source Table Schema possono essere creati, come abbiamo appena visto, dal wizard che si apre con il pulsante "Show all tables" presente sulla form del connettore, oppure utilizzando il secondo menu dell'applizazione ed importando singolarmente le tabelle che ci interessano usando la voce di menu "import table schema"
+						I record dell'oggetto <strong>Source Table Schema</strong> possono essere creati, come abbiamo appena visto, dal wizard che si apre con il pulsante "Show all tables" presente sulla form del connettore, oppure utilizzando il secondo menu dell'applicazione ed importando singolarmente le tabelle che ci interessano usando la voce di menu "import table schema"
 						<img src="img/import_schema.png"/>
 					</section>
 					<section>
@@ -89,7 +89,7 @@
 						<img src="img/map_to_odoo_model_button.png"/>
 					</section>
 					<section>
-						Il Wizard consente appunto di selezionare il modello odoo verso il quale si desidera mappare i dati della tabella sorgente; la pressione del bottone "Create Mapper" aprirà, in modalità edit, la form del terzo strumento dell'applicazione ovvero il Table Mapper.
+						Il Wizard consente appunto di selezionare il modello odoo verso il quale si desidera mappare i dati della tabella sorgente; la pressione del bottone "Create Mapper" aprirà, in modalità edit, la form del terzo strumento dell'applicazione ovvero il <strong>Table Mapper</strong>.
 						<img src="img/map_to_model_wizard.png"/>
 					</section>
 				</section>
@@ -101,13 +101,13 @@
 						</textarea>
 					</section>
 					<section>
-						Il Mapper Tool è lo strumento più articolato dell'applicazione e rappresenta il cuore del processo di migrazione.
+						Il <strong>Mapper Tool</strong> è lo strumento più articolato dell'applicazione e rappresenta il cuore del processo di migrazione.
 					</section>
 					<section>
 						Il Mapper serve infatti a stabilire i match fra le colonne di una tabella sorgente ed i campi di un modello Odoo; una volta impostati tutti i parametri, questo strumento eseguirà la migrazione vera e propria creando record del modello Odoo selezionato sulla base dei dati importati dalla tabella sorgente.
 					</section>
 					<section>
-						Il primo parametro da impostare dopo il nome è la modalità di mappatura; la selection consente tre valori: "Primitive on new records" per la creazione di nuovi record, "Primitive on existing records" e "Update existing records with fixed values" per aggiornare record già esistenti.
+						Il primo parametro da impostare dopo il nome è la modalità di mappatura; la selection consente tre valori: <i>Primitive on new records</i> per la creazione di nuovi record, "Primitive on existing records" e "Update existing records with fixed values" per aggiornare record già esistenti.
 						<img src="img/mapping_mode.png" width="600"/>
 					</section>
 					<section>
@@ -178,14 +178,16 @@
 						Come abbiamo visto il terzo passaggio eseguito grazie al Table Mapper importa unicamente dati raw su campi Odoo di tipo numerico, stringhe, booleani o date: se un modello odoo contiene esclusivamente campi di questo tipo, il processo di migrazione per questo modello può considerarsi di fatto terminato.
 					</section>
 					<section>
-						 Il 4° strumento dell'applicazione si rende invece necessario quando occorre valorizzare campi di tipo relazionale ovvero quando bisogna stabilire relazioni fra record mappati su diversi modelli odoo sulla base di primary key e foreign keys presenti sulle tabelle sorgenti importate.  
+						 Il 4° strumento dell'applicazione si rende invece necessario quando occorre valorizzare campi di tipo relazionale ovvero quando bisogna stabilire relazioni fra record mappati su diversi modelli odoo sulla base di primary key e foreign keys presenti sulle tabelle sorgenti importate.
+						 <br/><br/>
+						 In pratica <strong>tutti i campi relazionali</strong> verranno settati con l'aiuto di questo strumento.  
 					</section>
 					<section>
 						L'oggetto Relational Helper consente di scegliere i due modelli da relazionare (nell'esempio sale.order.line e product.product) e il campo Many2one da valorizzare (nell'esempio il campo Product).
 						<img src="img/relational_helper_form_1.png"/>
 					</section>
 					<section>
-						L'impostazione seguente, il Matching Mode, permette di selezionare la modalità con cui verranno posti in relazione i record dei due modelli; la prima modalità è il match on key fields e presuppone che siano importati (grazie al mapper) la primary key e la foreign key su campi custom dei due modelli; il match di queste chiavi verrà utilizzato per creare la relazione.
+						L'impostazione seguente, il Matching Mode, permette di selezionare la modalità con cui verranno posti in relazione i record dei due modelli; la prima modalità è il match on key fields e presuppone che siano stati importati (grazie al mapper) la primary key e la foreign key su campi custom dei due modelli; il match di queste chiavi verrà utilizzato per creare la relazione.
 						<img src="img/relational_helper_form_2.png"/>
 					</section>
 					<section>
