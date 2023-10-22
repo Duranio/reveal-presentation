@@ -31,176 +31,176 @@
 				<section>
 					<section data-markdown>
 							<textarea data-template>
-								## Panoramica
+								## Overview
 							</textarea>
 						</section>
-					<section>Come suggerisce il nome, <strong>il Data Migration Tool</strong> è uno strumento ideato per facilitare l'importazione di dati da altri gestionali verso Odoo</section>
-					<section>L'applicazione è composta funzionalmente da 4 strumenti che rappresentano anche i 4 passaggi sequenziali che devono essere eseguiti per portare a termine la migrazione di dati</section>
+					<section>The <strong>Data Migration Tool</strong> was designed to to facilitate the import of data from other management software to Odoo</section>
+					<section>The application is functionally composed of 4 tools which also represent the 4 sequential steps that must be performed to complete the data migration</section>
 					<section>
-						I 4 strumenti, disposti da sinistra a destra sul menù principale sono: il <i>Connettore</i>, l'oggetto <i>Source Table Schema</i>, il <i>Mapper</i> ed infine il <i>Relational Helper</i>.
+						The 4 tools, arranged from left to right on the main menu are: the <i>Connector</i>, the <i>Source Table Schema</i> object, the <i>Mapper</i> and finally the <i>Relational Helper</i>.
 						<img src="img/main_menu.png"/>
 					</section>
 				</section>
 				<section>
 					<section data-markdown>
 						<textarea data-template>
-							## 1 Il Connettore							
+							## 1 The Connector							
 							<img src="img/connector_menu.png"/>
 						</textarea>
 					</section>
 					<section>
-						La crezione di un <strong>Connettore</strong>, rappresenta il punto di partenza del processo di migrazione.
+						The creation of a <strong>Connector</strong> represents the starting point of the migration process.
 					</section>
 					<section>
-						Un nuovo record di connessione viene creato grazie alla form dell'oggetto db.connector, che consente di impostare il nome del connettore, il <i>tipo</i> di DB a cui ci si connette (attualmente l'unica tipologia implementata selezionabile è MySQL), l'<i>URL</i>, il <i>nome</i> del DB e la <i>password</i>.
+						A new connection record is created using the db.connector object form, which allows you to set the name of the connector, the <i>type</i> of DB you connect to (currently the only type implemented selectable is MySQL), the <i>URL</i>, the <i>name</i> of the DB and the <i>password</i>.
 						<img src="img/connector_form.png"/>
 					</section>
 					<section>
-						Una volta impostati tutti i campi richiesti, è possibile verificare la validità della connessione con il DB sorgente grazie al bottone <i>Test Connection</i>.
+						Once all the required fields have been set, it is possible to check the validity of the connection to the source DB using the <i>Test Connection</i> button.
 						<img src="img/test_connector.png"/>
 					</section>
 					<section>
-						Se tutti i parametri sono stati impostati correttamente e la connesione risulta valida, si può procedere ad esplorare il contenuto del DB sorgente grazie al bottone <i>Show All Tables</i> che apre un wizard con l'elenco delle tabelle contenute nel DB
+						If all the parameters have been set correctly and the connection is valid, you can proceed to explore the contents of the source DB using the <i>Show All Tables</i> button which opens a wizard with the list of tables contained in the DB
 						<img src="img/show_all_tables.png" width="600"/>
 					</section>
 					<section>
-						Utilizzando questo wizard è possibile selezionare una o più tabelle sorgente per la creazione di record del secondo elemento fondamentale dell'applicazione ovvero del <strong>Source Table Schema</strong>.
+						Using this wizard it is possible to select one or more source tables for the creation of records of the second fundamental element of the application: the <strong>Source Table Schema</strong>.
 						<img src="img/import_schemas.png" width="600"/>
 					</section>
 				</section>
 				<section>
 					<section data-markdown>
 						<textarea data-template>
-							## 2 Il Source Tool
+							## 2 The Source Tool
 							<img src="img/source_menu.png"/>
 						</textarea>
 					</section>
 					<section>
-						I record dell'oggetto <strong>Source Table Schema</strong> possono essere creati, come abbiamo appena visto, dal wizard che si apre con il pulsante <i>Show all tables</i> presente sulla form del connettore, oppure utilizzando il secondo menu dell'applicazione ed importando singolarmente le tabelle che ci interessano usando la voce di menu <i>import table schema</i>.
+						The records of the <strong>Source Table Schema</strong> object can be created, as we have just seen, from the Wizard opened with the <i>Show all tables</i> button on the connector form, or thanks to the second menu of the application, individually importing the tables that interest us using the <i>import table schema</i> menu item.
 						<img src="img/import_schema.png"/>
 					</section>
 					<section>
-						L'oggetto <strong>Source Table Schema</strong> mostra la rappresentazione delle tabelle da importare (nome colonne, tipologie di dato ecc)
+						The <strong>Source Table Schema</strong> object shows the representation of the tables to be imported (column names, data types, etc.)
 						<img src="img/table_schema_form.png"/>
 					</section>
 					<section>
-						Nella form di un record di <strong>Source Table Schema</strong> è presente un bottone che consente di aprire un wizard per muoversi verso lo step successivo, ovvero la mappatura della tabella sorgente verso un particolare modello Odoo.
+						In the form of a <strong>Source Table Schema</strong> record there is a button that allows opening a wizard to move towards the next step, i.e. the mapping of the source table to a particular Odoo model.
 						<br/>
 						<img src="img/map_to_odoo_model_button.png"/>
 					</section>
 					<section>
-						Il Wizard consente appunto di selezionare il modello odoo verso il quale si desidera mappare i dati della tabella sorgente; la pressione del bottone <i>Create Mapper</i> aprirà, in modalità edit, la form del terzo strumento dell'applicazione ovvero il <strong>Table Mapper</strong>.
+						The Wizard allows you to select the odoo model to which you want to map the source table data; the <i>Create Mapper</i> button will open, in edit mode, the form of the third tool of the application, the <strong>Table Mapper</strong>.
 						<img src="img/map_to_model_wizard.png"/>
 					</section>
 				</section>
 				<section>
 					<section data-markdown>
 						<textarea data-template>
-							## 3 Il Mapper Tool
+							## 3 The Mapper Tool
 							<img src="img/mapper_menu.png"/>
 						</textarea>
 					</section>
 					<section>
-						Il <strong>Mapper Tool</strong> è lo strumento più articolato dell'applicazione e rappresenta il cuore del processo di migrazione.
+						The <strong>Mapper Tool</strong> is the most complex tool in the application and represents the heart of the migration process.
 					</section>
 					<section>
-						Il <strong>Mapper</strong> serve infatti a stabilire i match fra le colonne di una tabella sorgente ed i campi di un modello Odoo; una volta impostati tutti i parametri, questo strumento eseguirà la migrazione vera e propria creando record del modello Odoo selezionato sulla base dei dati importati dalla tabella sorgente.
+						The <strong>Mapper</strong> is used to establish the correspondence between the columns of a source table and the fields of an Odoo model; once all the parameters are set, this tool will perform the actual migration by creating the selected Odoo model records based on the data imported from the source table.
 					</section>
 					<section>
-						Il primo parametro da impostare dopo il nome è la modalità di mappatura; la selection consente tre valori: <i>Primitive on new records</i> per la creazione di nuovi record, <i>Primitive on existing records</i> e <i>Update existing records with fixed values</i> per aggiornare record già esistenti.
+						The first parameter to set after the name is the mapping mode; the selection allows three values: <i>Primitive on new records</i> for creating new records, <i>Primitive on existing records</i> and <i>Update existing records with fixed values</i> for update existing records.
 						<img src="img/mapping_mode.png" width="600"/>
 					</section>
 					<section>
-						I campi <i>Source Table</i> e <i>Odoo Model to Map</i> impostano la tabella sorgente da cui vengono migrati i dati e il modello Odoo di destinazione; se la form è aperta grazie al wizard attivato dallo strumento Source Table, saranno già preimpostati.
+						The <i>Source Table</i> and <i>Odoo Model to Map</i> fields set the source table from which the data is migrated and the destination Odoo model; if the form is opened through the wizard activated by the Source Table tool, they will already be preset.
 						<img src="img/source_destination.png" width="600"/>
 					</section>
 					<section>
-						L'opzione successiva consente di applicare filtri ai record sorgente; se il flag è attivo, è possibile selezionare quali record della tabella sorgente migrare in base a determinate condizioni.
+						The next option allows you to apply filters to the source recording; if the flag is active, you can select which records from the source table to migrate based on certain conditions.
 						<img src="img/filter_source.png" width="600"/>
 					</section>
 					<section>
-						L'impostazione seguente permette di stabilire i <i>matches</i>, ovvero gli abbinamenti fra le colonne della tabella sorgente e i campi del modello odoo di destinazione.
+						The following setting allows you to establish the <i>matches</i> between the columns of the source table and the fields of the destination odoo model.
 						<br/>
 						<img src="img/matches.png" width="600"/>
 					</section>
 					<section>
-						La form di crezione dei matches dà accesso ad ulteriori impostazioni di mappatura; il <i>Filling Mode</i>, <i>Source Table Column</i>, <i>Odoo Model Field</i> ed infine una serie di campi per eseguire eventulai check, conversioni o modifiche dei valori da migrare.
+						The matchmaking form gives access to additional mapping settings; the <i>Filling Mode</i>, <i>Source Table Column</i>, <i>Odoo Model Field</i> and finally a series of fields to perform any checks, conversions or modifications on the values we are migrating.
 						<img src="img/match_form.png" width="600"/>
 					</section>
 					<section>
-						Il <i>Filling Mode</i> consente di scegliere se mappare una singola colonna della tabella sorgente su un campo del modello Odoo di destinazione (modalità standard), oppure se concatenare valori di più colonne su un singolo campo, nel qual caso è possibile scegliere fra vari caratteri per la concatenazione.
+						The <i>Filling Mode</i> allows you to choose whether to map a single column of the source table onto a field of the destination Odoo model (standard mode), or whether to concatenate values from multiple columns onto a single field, in which case you can choose between various characters for concatenation.
 						<img src="img/filling_mode.png"/>
 					</section>
 					<section>
-						Altre valori possibili per il Filling Mode sono <i>Fixed Value</i>, <i>Get Odoo Sequence</i> e <i>Get Random id</i>.
+						Other possible values for the Filling Mode are <i>Fixed Value</i>, <i>Get Odoo Sequence</i> and <i>Get Random id</i>.
 						<img src="img/filling_mode.png"/>
 					</section>
 					<section>
-						Il campo <i>Source Table Column</i> consente di selezionare la colonna (o le colonne, nel caso di filling mode = multiple concatenated source column values) della tabella sorgente da cui vengono importati i valori da migrare.
+						The <i>Source Table Column</i> field allows you to select the column (or columns, in the case of filling mode = multiple concatenated source column values) of the source table from which the values to be migrated are imported.
 						<img src="img/multiple_concat.png"/>
 					</section>
 					<section>
-						Il campo <i>Odoo Model Field</i> stabilisce il campo di destinazione su cui verranno salvati i valori migrati.
+						The <i>Odoo Model Field</i> field establishes the destination field to which the migrated values will be saved.
 						<img src="img/source_dest_field.png" width="600"/>
 					</section>
 					<section>
-						Infine sono presenti alcune opzioni per effettuare Check/Conversioni o Modifiche dei valori importati: escludere duplicati, impostare un particolare valore di default in caso di valore nullo, alterare i valori originali in base a determinate conversioni impostabili, forzare un cast in Integer o Float o forzare una lunghezza fissa del valore stringa di destinazione.
+						Finally, there are some options to carry out Checks/Conversions or Modifications of the imported values: exclude duplicates, set a particular default value in case of null value, alter the original values based on certain settable conversions, force a cast in Integer or Float or force a fixed length of the target string value.
 						<img src="img/checks_conv_mod.png" width="600"/>
 					</section>
 					<section>
-						Come vedremo nella sezione successiva, i dati relazionali ovvero le foreign key possono essere importate come dati primitivi da mappare su campi custom creati via codice o tramite Odoo Studio per poi essere utilizzati con lo strumento <strong>Relational Helper</strong> per popolare i campi relazionali.
+						As we will see in the next section, relational data such as foreign keys can be imported as primitive data to be mapped onto custom fields created via code or via Odoo Studio and then used with the <strong>Relational Helper</strong> tool to populate the relational fields.
 					</section>
 					<section>
-						Tuttavia esiste un altro modo per salvare i dati relazionali: la sezione <i>Tracing Parameters</i> dà appunto la possibilità di salvare eventuali foreign keys su speciali oggetti <i>tracer</i> messi a disposizione dall'applicazione, eliminando il bisogno di creare nuovi campi custom per il salvataggio di questi dati e quindi senza la necessità di modificare il modello Odoo di destinazione. Questa modalità è ancora in fase di testing.
+						However, there is another way to save relational data: the <i>Tracing Parameters</i> section gives the possibility of saving any foreign keys on special <i>tracer</i> objects made available by the application, eliminating the need to create new custom fields for saving this data and therefore without the need to modify the destination Odoo model. This mode is still in testing.
 						<br/>
 						<img src="img/tracing_param.png" width="800"/>
 					</section>
 					<section>
-						Infine la sezione <i>Record Creation Parameters</i> consente di limitare il numero di record da imporatare, di applicare un eventuale offset e di scegliere la modalità di creazione dei record: la modalità standard chiama il metodo create, le altre utilizzano la chiamata diretta sul db (più veloce) o la creazione tramite form (più lenta).
+						Finally, the <i>Record creation parameters</i> section allows you to limit the number of records to import, to apply a possible offset and to choose the record creation mode: the standard mode calls the create method, the others they use direct call on the database (faster) or creation via form (slower).
 						<img src="img/creation_param.png" width="800"/>
 					</section>
 					<section>
-						Dopo aver impostato tutti i dati, la pressione del bottone <i>Import Data</i> darà il via alla migrazione operata dal mapper e quindi alla creazione o all'update di record (a seconda del Mapping Mode selezionato) nel modello Odoo di destinazione. L'operazione può richiedere un tempo variabile a seconda di numerosi fattori fra cui velocità della macchina utilizzata, velocità di connessione, modalità di creazione, numero di campi da mappare e numero di record sorgente.
+						After setting all the fields, pressing the <i>Import Data</i> button will start the migration carried out by the mapper and therefore the creation or update of records (depending on the selected Mapping Mode) in the Odoo destination model. The operation may take a variable amount of time depending on numerous factors including the speed of the machine used, connection speed, creation mode, number of fields to map and, of course, number of source records to migrate.
 					</section>
 					<section>
-						Al termine dell'operazione di importazione, un wizard mostrerà un breve rapporto del risultato (numero di record creati o aggiornati).
+						Once the import operation is completed, a wizard will show a short report of the result (number of records created or updated).
 						<img src="img/mapper_report.png"/>
 					</section>
 				</section>
 				<section>				
 					<section data-markdown>
 						<textarea data-template>
-							## 4 Il Relational Helper
+							## 4 The Relational Helper
 							<img src="img/relational_menu.png"/>
 						</textarea>
 					</section>
 					<section>
-						Come abbiamo visto il terzo passaggio eseguito grazie al <strong>Table Mapper</strong> importa unicamente dati raw su campi Odoo di tipo numerico, stringhe, booleani o date: se un modello odoo contiene esclusivamente campi di questo tipo, il processo di migrazione per questo modello può considerarsi di fatto terminato.
+						As we have just seen, the third step performed with <strong>Table Mapper</strong> imports only raw data on numeric, string, Boolean or date Odoo fields: if an Odoo model contains only fields of this type, the migration process for this model it can be considered effectively concluded.
 					</section>
 					<section>
-						 Il 4° strumento dell'applicazione si rende invece necessario quando occorre valorizzare campi di tipo relazionale ovvero quando bisogna stabilire relazioni fra record mappati su diversi modelli odoo sulla base di primary key e foreign keys presenti sulle tabelle sorgenti importate.
+						 The 4th tool of the application is instead necessary when we need to set relational fields, i.e. to establish relationships between records mapped to different Odoo models on the basis of primary keys and foreign keys present on the imported source tables.
 						 <br/><br/>
-						 In pratica <i>tutti i campi relazionali</i> verranno settati con l'aiuto di questo strumento.  
+						 Basically <i>all relational fields</i> will be set by means of this tool.  
 					</section>
 					<section>
-						L'oggetto <strong>Relational Helper</strong> consente di scegliere i due modelli da relazionare (nell'esempio sale.order.line e product.product) e il campo Many2one da valorizzare (nell'esempio il campo Product).
+						The <strong>Relational Helper</strong> object allows you to choose the two models to relate (in the example sale.order.line and product.product) and the Many2one field to set (in the example the Product field).
 						<img src="img/relational_helper_form_1.png"/>
 					</section>
 					<section>
-						L'impostazione seguente, il <i>Matching Mode</i>, permette di selezionare la modalità con cui verranno posti in relazione i record dei due modelli; la prima modalità è il <i>match on key fields</i> e presuppone che siano stati importati (grazie al mapper) la primary key e la foreign key su campi custom dei due modelli; il match di queste chiavi verrà utilizzato per creare la relazione.
+						The following setting, the <i>Matching Mode</i>, allows you to select the way in which the records of the two models will be related; the first method is <i>match on key fields</i> and it works on the assumption that the primary key and the foreign key of the two models have been imported (thanks to the mapper) on custom fields ; the match of these keys will be used to create the relationship.
 						<img src="img/relational_helper_form_2.png"/>
 					</section>
 					<section>
-						Come nello strumento Mapper, anche nel <strong>Relational Helper</strong> è possibile limitare il numero di record su cui eseguire l'operazione; in questo caso si può impostare il valore minimo e massimo delle key da comparare (questa opzione è disponibile solo nella modalità <i>Match on key fields</i>).				
+						As in the Mapper tool, it is possible to limit the number of records on which to perform the operation; in this case you can set the minimum and maximum value of the keys to compare (this option is only available in the <i>Match on key fields</i> mode).				
 						<img src="img/restrict_conditions.png"/>
 					</section>
 					<section>
-						In alternativa, scegliendo la modalità <i>Match on Relational match record</i> è possibile stabilire una relazione senza ricorrere a chiavi salvate su campi custom; questa modalità si basa sugli oggetti tracer a cui abbiamo accennato nel tool precedente ed è attualmente ancora in fase di testing. 
+						Alternatively, by choosing the <i>Match on Relational match record</i> mode it is possible to establish a relationship without using the keys saved in the custom fields; this mode is based on the tracking objects we talked about in the previous tool and is currently still in the testing. 
 						<img src="img/relational_helper_form_3.png"/>
 					</section>
 					
 					<section>
-						Dopo aver settato tutte le impostazioni, la pressiome del bottone <i>Create Relation</i> avvierà l'operazione, al termine della quale apparirà un wizard con un breve report del risultato.
+						After setting all fields, pressing the <i>Create report</i> button will start the operation; at the end a wizard will show a short report with the results.
 						<img src="img/relational_helper_report.png"/>
 					</section>
 				</section>
@@ -209,24 +209,41 @@
 						
 						<textarea data-template>
 							
-							## Prossimi Sviluppi
+							## Migration Demo
 							
 						</textarea>
 						
 					</section>
 					<section>
-						Nell'immediato, stiamo testando la funzionalità <i>tracer</i> che consente di salvare i dati relazionali (primary e foreign keys) senza la necessità di ricorrere alla creazione di campi custom.
+						<video width="640" height="480" controls>
+							<source src="video/demo.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+						</video> 
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						
+						<textarea data-template>
+							
+							## Upcoming developments
+							
+						</textarea>
+						
 					</section>
 					<section>
-						Inoltre verrà a breve estesa la funzionalità dello strumento <strong>Relational Helper</strong> per valorizzare anche i campi <i>Many2many</i>.
+						Right now, we are testing the <i>tracer</i> functionality which allows you to save relational data (primary and foreign keys) without the need to resort to the creation of custom fields.
+					</section>
+					<section>
+						Furthermore, the functionality of the <strong>Relational Helper</strong> tool will soon be extended to also enhance the <i>Many2many</i> fields.
 					</section>
 				
-				</section>	
+				</section>
 				<section data-markdown>
 					
 					<textarea data-template>
 						
-						## Grazie per l'attenzione
+						## Thank you for your attention.
 						
 					</textarea>
 					
