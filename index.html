@@ -52,7 +52,7 @@
 						The creation of a <strong>Connector</strong> represents the starting point of the migration process.
 					</section>
 					<section>
-						A new connection record is created using the db.connector object form, which allows you to set the name of the connector, the <i>type</i> of DB you connect to (currently the only type implemented selectable is MySQL), the <i>URL</i>, the <i>name</i> of the DB and the <i>password</i>.
+						A new connection record is created using the db.connector object form, which allows you to set the name of the connector, the <i>type</i> of DB you connect to (currently the only type implemented is MySQL), the <i>URL</i>, the <i>name</i> of the DB and the <i>password</i>.
 						<img src="img/connector_form.png"/>
 					</section>
 					<section>
@@ -60,11 +60,13 @@
 						<img src="img/test_connector.png"/>
 					</section>
 					<section>
-						If all the parameters have been set correctly and the connection is valid, you can proceed to explore the contents of the source DB using the <i>Show All Tables</i> button which opens a wizard with the list of tables contained in the DB
+						If all the parameters have been set correctly and the connection is valid, you can proceed to explore the contents of the source DB using the <i>Show All Tables</i> button which opens a wizard with the list of tables contained in the DB.
+						<br/>
 						<img src="img/show_all_tables.png" width="600"/>
 					</section>
 					<section>
 						Using this wizard it is possible to select one or more source tables for the creation of records of the second fundamental element of the application: the <strong>Source Table Schema</strong>.
+						<br/>
 						<img src="img/import_schemas.png" width="600"/>
 					</section>
 				</section>
@@ -89,7 +91,8 @@
 						<img src="img/map_to_odoo_model_button.png"/>
 					</section>
 					<section>
-						The Wizard allows you to select the odoo model to which you want to map the source table data; the <i>Create Mapper</i> button will open, in edit mode, the form of the third tool of the application, the <strong>Table Mapper</strong>.
+						The Wizard allows you to select the Odoo model to which you want to map the source table data; the <i>Create Mapper</i> button will open, in edit mode, the form of the third tool of the application, the <strong>Table Mapper</strong>.
+						<br/>
 						<img src="img/map_to_model_wizard.png"/>
 					</section>
 				</section>
@@ -107,7 +110,7 @@
 						The <strong>Mapper</strong> is used to establish the correspondence between the columns of a source table and the fields of an Odoo model; once all the parameters are set, this tool will perform the actual migration by creating the selected Odoo model records based on the data imported from the source table.
 					</section>
 					<section>
-						The first parameter to set after the name is the mapping mode; the selection allows three values: <i>Primitive on new records</i> for creating new records, <i>Primitive on existing records</i> and <i>Update existing records with fixed values</i> for update existing records.
+						The first parameter to set after the name is the mapping mode; the selection allows three values: <i>Primitive on new records</i> for creating new records, <i>Primitive on existing records</i> and <i>Update existing records with fixed values</i> for updating records.
 						<img src="img/mapping_mode.png" width="600"/>
 					</section>
 					<section>
@@ -115,11 +118,11 @@
 						<img src="img/source_destination.png" width="600"/>
 					</section>
 					<section>
-						The next option allows you to apply filters to the source recording; if the flag is active, you can select which records from the source table to migrate based on certain conditions.
+						The next option allows you to apply filters to the source records; if the flag is active, you can select which records from the source table to migrate based on certain conditions.
 						<img src="img/filter_source.png" width="600"/>
 					</section>
 					<section>
-						The following setting allows you to establish the <i>matches</i> between the columns of the source table and the fields of the destination odoo model.
+						The following setting allows you to establish the <i>matches</i> between the columns of the source table and the fields of the destination Odoo model.
 						<br/>
 						<img src="img/matches.png" width="600"/>
 					</section>
@@ -140,11 +143,12 @@
 						<img src="img/multiple_concat.png"/>
 					</section>
 					<section>
-						The <i>Odoo Model Field</i> field establishes the destination field to which the migrated values will be saved.
+						The <i>Odoo Model Field</i> establishes the destination field to which the migrated values will be saved.
 						<img src="img/source_dest_field.png" width="600"/>
 					</section>
 					<section>
 						Finally, there are some options to carry out Checks/Conversions or Modifications of the imported values: exclude duplicates, set a particular default value in case of null value, alter the original values based on certain settable conversions, force a cast in Integer or Float or force a fixed length of the target string value.
+						<br/>
 						<img src="img/checks_conv_mod.png" width="600"/>
 					</section>
 					<section>
@@ -156,7 +160,7 @@
 						<img src="img/tracing_param.png" width="800"/>
 					</section>
 					<section>
-						Finally, the <i>Record creation parameters</i> section allows you to limit the number of records to import, to apply a possible offset and to choose the record creation mode: the standard mode calls the create method, the others they use direct call on the database (faster) or creation via form (slower).
+						Finally, the <i>Record creation parameters</i> section allows you to limit the number of records to import, to apply a possible offset and to choose the record creation mode: the standard mode calls the create method, the others use direct call on the database (faster) or creation via form (slower).
 						<img src="img/creation_param.png" width="800"/>
 					</section>
 					<section>
@@ -175,7 +179,7 @@
 						</textarea>
 					</section>
 					<section>
-						As we have just seen, the third step performed with <strong>Table Mapper</strong> imports only raw data on numeric, string, Boolean or date Odoo fields: if an Odoo model contains only fields of this type, the migration process for this model it can be considered effectively concluded.
+						As we have just seen, the third step performed with <strong>Table Mapper</strong> imports only raw data on numeric, string, Boolean or date Odoo fields: if an Odoo model contains only those kinds of fields, the migration process for this model can be considered effectively concluded.
 					</section>
 					<section>
 						 The 4th tool of the application is instead necessary when we need to set relational fields, i.e. to establish relationships between records mapped to different Odoo models on the basis of primary keys and foreign keys present on the imported source tables.
@@ -188,14 +192,14 @@
 					</section>
 					<section>
 						The following setting, the <i>Matching Mode</i>, allows you to select the way in which the records of the two models will be related; the first method is <i>match on key fields</i> and it works on the assumption that the primary key and the foreign key of the two models have been imported (thanks to the mapper) on custom fields ; the match of these keys will be used to create the relationship.
-						<img src="img/relational_helper_form_2.png"/>
+						<img src="img/relational_helper_form_2.png" width="800"/>
 					</section>
 					<section>
 						As in the Mapper tool, it is possible to limit the number of records on which to perform the operation; in this case you can set the minimum and maximum value of the keys to compare (this option is only available in the <i>Match on key fields</i> mode).				
 						<img src="img/restrict_conditions.png"/>
 					</section>
 					<section>
-						Alternatively, by choosing the <i>Match on Relational match record</i> mode it is possible to establish a relationship without using the keys saved in the custom fields; this mode is based on the tracking objects we talked about in the previous tool and is currently still in the testing. 
+						Alternatively, by choosing the <i>Match on Relational match record</i> mode it is possible to establish a relationship without using the keys saved in the custom fields; this mode is based on the tracking objects we talked about in the previous tool and is currently still in testing. 
 						<img src="img/relational_helper_form_3.png"/>
 					</section>
 					
