@@ -212,15 +212,7 @@
 							The Mapper Tool
 						</strong>
 						<br><br>
-						The <i>Filling Mode</i> allows you to choose whether to map a single column of the source table onto a field of the destination Odoo model, or whether to concatenate values from multiple columns onto a single field, in which case you can choose between various characters for concatenation.
-						<img src="img/filling_mode.png"/>
-					</section>
-					<section>
-						<strong>
-							The Mapper Tool
-						</strong>
-						<br><br>
-						Other possible values for the Filling Mode are <i>Fixed Value</i>, <i>Get Odoo Sequence</i> and <i>Get Random id</i>.
+						The <i>Filling Mode</i> allows you to choose how to map one or more columns of the source table to a field of the target Odoo model.
 						<img src="img/filling_mode.png"/>
 					</section>
 					<section>
@@ -261,7 +253,7 @@
 						</strong>
 						<br>
 						However, there is another way to save relational data:
-						<br>
+						<br><br>
 						The <i>Tracing Parameters</i> section gives the possibility of saving any foreign keys on special <i>tracer</i> objects, without using custom fields.
 						<br><br>
 						<img src="img/tracing_param.png" width="800"/>
@@ -275,9 +267,9 @@
 						<br>
 						- <i>Intermediate</i>: Creation via create method
 						<br>
-						- <i>Faster</i>: Creation via query on the database
+						- <i>Faster</i>: Creation via Query on the database
 						<br>
-						- <i>Slower</i>: Creation via form.
+						- <i>Slower</i>: Creation via Form Class.
 						<img src="img/creation_param.png" width="800"/>
 					</section>
 					<section>
@@ -285,15 +277,7 @@
 							The Mapper Tool
 						</strong>
 						<br><br>
-						After setting all the fields, pressing the <i>Import Data</i> button will start the migration carried out by the mapper and therefore the creation or update of records in the Odoo destination model.
-						<br>
-						</section>
-						<section>
-						<strong>
-							The Mapper Tool
-						</strong>
-						<br><br>
-						The operation may take a variable amount of time depending on numerous factors:
+						After setting all the fields, pressing the <i>Import Data</i> button will start the creation or update of records in the Odoo destination model, the operation may take a variable amount of time depending on numerous factors:
 						<br>
 						- The speed of the machine used
 						<br>
@@ -310,7 +294,8 @@
 							The Mapper Tool
 						</strong>
 						<br><br>
-						Once the import operation is completed, a wizard will show a short report of the result (number of records created or updated).
+						Once the import operation is completed, a wizard will show a short report of the result.
+						<br><br>
 						<img src="img/mapper_report.png"/>
 					</section>
 				</section>
@@ -326,7 +311,7 @@
 							The Relational Helper
 						</strong>
 						<br><br>
-						As we have just seen, the third step performed with <strong>Table Mapper</strong> imports only raw data on numeric, string, Boolean or date Odoo fields.
+						The third step performed with <strong>Table Mapper</strong> imports only raw data on numeric, string, Boolean or date Odoo fields.
 						<br>
 						If an Odoo model contains only these types of fields, the migration process for this model can be considered effectively concluded.
 					</section>
@@ -335,7 +320,7 @@
 							The Relational Helper
 						</strong>
 						<br><br>
-						The 4th tool of the application is instead necessary when we need to set relational fields,
+						The 4th tool of the application is instead necessary when we need to set relational fields.
 						<br>
 						That is to establish relationships between records mapped to different Odoo models on the basis of primary keys and foreign keys present on the imported source tables.
 					</section>
@@ -376,7 +361,7 @@
 						<br>
 						Instead, by choosing the <i>Match on Relational match record</i> mode it is possible to establish a relationship without using the keys saved in the custom fields.
 						<br><br>
-						This mode is based on the tracking objects that we talked about in the previous tool.
+						This mode is based on the <strong>tracer</strong> objects.
 						<br><br>
 						<img src="img/relational_helper_form_3.png" width="650"/>
 					</section>
